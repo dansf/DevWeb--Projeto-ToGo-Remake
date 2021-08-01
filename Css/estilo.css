@@ -6,6 +6,7 @@
     --blue-color: hsl(var(--main-color), 33%, 20%);
     --lightblue-color: hsl(var(--main-color), 100%, 20%);
     --black-color: #000;
+    --blacklight-color: rgb(43, 43, 43);
     --white-color: #fff;
     --gray-color: rgba(124, 124, 124, 0.2);
     --shadow-box: 1px 0 4px var(--gray-color);
@@ -66,7 +67,7 @@
 }
 
 html{
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 
 body{
@@ -101,6 +102,7 @@ input{
 
 input{
     outline: none;
+    cursor: pointer;
 }
 
 a{
@@ -365,9 +367,8 @@ a{
 
 .ships__container{
     display: grid;
-    grid-template-columns: repeat(2, 160px);
-    column-gap: var(--mb-1);
-    row-gap: var(--mb-1);
+    grid-template-columns: repeat(2, 0.8fr);
+    gap: var(--mb-1);
 }
 
 .ships__box{
@@ -426,7 +427,7 @@ a{
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    width: 8rem;
+    width: 10rem;
     margin-top: var(--mb-1);
 }
 
@@ -437,10 +438,15 @@ a{
     margin-bottom: var(--mb-0-5);
 }
 
+.newletter__container{
+    background-color: var(--black-color);
+}
+
 .newletter__data{
-    background: var(--black-color);
     color: var(--white-color);
     padding: var(--mb-1);
+    display: flex;
+    flex-direction: column;
 }
 
 .newletter__title{
@@ -459,8 +465,13 @@ a{
 
 .newletter__submit{
     padding: var(--mb-0-25) var(--mb-0-5);
-    background-color: var(--lightblue-color);
+    background-color: var(--blue-color);
     color: var(--white-color);
+    transition: var(--img-transition);
+}
+
+.newletter__submit:hover{
+    background-color: var(--lightblue-color);
 }
 
 .footer{
@@ -478,7 +489,7 @@ a{
 }
 
 .footer__title{
-    color: white;
+    color: var(--white-color);
     position: relative;
     display: inline;
     margin-bottom: var(--mb-0-5);
@@ -495,15 +506,47 @@ a{
     background-color: var(--white-color);
 }
 
-.footer__text{
-    color: var(--white-color);
-}
-
+.footer__text,
 .footer__copyright{
     color: var(--white-color);
+    transition: var(--img-transition);
+}
+
+.footer__text:hover,
+.footer__copyright:hover{
+    color: var(--lightblue-color);
+}
+
+::-webkit-scrollbar{
+    width: .60rem;
+    background-color: var(--white-color);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--gray-color);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--lightblue-color);
 }
 
 /* MEDIA QUERIES */
+@media (max-width: 340px){
+    .ships__container{
+        grid-template-columns: 0.7fr;
+        justify-content: center;
+    }
+
+    .ships__box:nth-child(4){
+        display: none;
+    }
+
+    .ships__button{
+        width: 8rem;
+    }
+
+}
+
 @media (min-width: 768px){
     .nav{
         height: calc(var(--header-height) + 1.5rem);
@@ -586,45 +629,25 @@ a{
         column-gap: var(--mb-2-5);
     }
 
-    /* .about__container{
-        grid-template-columns: repeat(2, 5fr);
+    .ships__container{
+        grid-template-columns: repeat(2, 0.35fr);
+        gap: var(--mb-2);
+        justify-content: center;
     }
 
-    .about__data1,
-    .about__data2{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    .newletter__data{
         width: 60%;
-        max-width: 600px;
-        margin: 0 auto;
-        border-radius: .5rem;
-    }
-
-    .about__data1-image{
-        width: 80%;
-        height: 70%;
         margin: 0 auto;
     }
 
-    .about__data1-text{
-        width: 70%;
-        height: 25%;
-        transform: translate(-4rem, 0);
-    }
-
-    .about__data2-image{
-        width: 80%;
-        height: 70%;
+    .newletter__submit{
+        width: 50%;
         margin: 0 auto;
     }
 
-    .about__data2-text{
-        width: 70%;
-        height: 30%;
-        transform: translate(-4rem, 0);
-
-    } */
+    .footer{
+        padding-bottom: 0;
+    }
 }
 
 @media (min-width: 1024px){
@@ -635,6 +658,33 @@ a{
 
     .home__container{
         grid-template-rows: var(--mb-2) .1fr;
+    }
+
+    .ships__container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ships__box{
+        width: 60%;
+    }
+
+    .newletter__container{
+        padding: var(--mb-1);
+    }
+
+    .footer{
+        padding-bottom: 0;
+    }
+
+    .footer__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer__data:nth-child(5){
+        grid-column: 2 / span 2;
+        text-align: center;
     }
 }
 
