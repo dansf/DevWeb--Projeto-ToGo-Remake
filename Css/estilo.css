@@ -83,8 +83,7 @@ h1,h2,h3{
     font-family: var(--body-font);
 }
 
-img,
-video{
+img{
     max-width: 100%;
     height: auto;
 }
