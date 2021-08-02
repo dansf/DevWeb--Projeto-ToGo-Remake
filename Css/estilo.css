@@ -8,7 +8,7 @@
     --black-color: #000;
     --blacklight-color: rgb(43, 43, 43);
     --white-color: #fff;
-    --gray-color: rgba(124, 124, 124, 0.2);
+    --gray-color: rgba(124, 124, 124, 0.4);
     --shadow-box: 1px 0 4px var(--gray-color);
 
     /* FONT */
@@ -178,7 +178,7 @@ a{
         background-color: var(--white-color);
         top: 0;
         right: -100%;
-        width:60%;
+        width: 70%;
         height: 100%;
         box-shadow: 1px 0 4px var(--gray-color);
         padding: var(--mb-2);
@@ -205,14 +205,14 @@ a{
 }
 
 .nav__link{
-    color: var(--black-color);
+    color: var(--gray-color);
     font-weight: var(--font-semi-bold);
     text-transform: uppercase;
     transition: var(--img-transition);
 }
 
 .nav__link:hover{
-    color: var(--blue-color);
+    color: var(--lightblue-color);
     transition: var(--img-transition);
 }
 
@@ -236,6 +236,11 @@ a{
 
 .show-menu{
     right: 0;
+}
+
+/*========== ACTIVE LINK ============*/
+.active-link{
+    color: var(--blacklight-color);
 }
 
 /*=============== SECTION HOME ==============*/
