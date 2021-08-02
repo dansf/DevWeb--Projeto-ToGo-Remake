@@ -57,4 +57,7 @@
     <li><a href="https://remixicon.com/" style="text-decoration: none">RemixIcon</a></li>
     <li><a href="https://fonts.google.com/" style="text-decoration: none">GoogleFonts</a></li>
 </ul>
+<h6  align="center" style="font-size: 10px">
+    Deus seja louvado
+</h6>
 
