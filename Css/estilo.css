@@ -465,9 +465,11 @@ a{
 .newletter__input{
     padding: var(--mb-0-25) var(--mb-1);
     margin: var(--mb-0-5) 0;
+    width: 100%;
 }
 
 .newletter__submit{
+    width: 100%;
     padding: var(--mb-0-25) var(--mb-0-5);
     background-color: var(--blue-color);
     color: var(--white-color);
